@@ -1,0 +1,139 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:f="http://java.sun.com/jsf/core">
+<f:metadata>
+    <f:viewParam name="email" value="#{empresaMBean.empresa.email}" />
+    <f:viewAction action="#{empresaMBean.verificarEmpresa}" />
+</f:metadata>
+<h:head> 
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" http-equiv="X-UA-Conpatible" />
+    <h:outputStylesheet library="css" name="bootstrap.min.css" />
+	<title>ECIS - Dados da empresa</title>
+</h:head>
+
+<h:body>
+	<header class="display-8 fw-normal pricing-header p-3 pb-md-4 mx-auto text-center navbar-dark navbar-dark nav-item" style="background-color: #7952b3; color:white;">ECIS - AVALIAÇÃO</header>
+	<hr class="featurette-divider"> </hr>
+	
+	<section class="container">
+  		
+            <h2 class="display-12 fw-normal pricing-header p-3 pb-md-4 mx-auto text-center">Dados da empresa</h2>
+		
+        <article class="row">
+            <div class="col-xs-12 col-xs-updated">
+		        <h:form class="form-horizontal needs-validation ">
+		        	<div class="row">
+						<div class="form-group col-sm-6">
+							<h:outputLabel value="Nome: *" class="form-label" />
+							
+							<h:inputText id="nomeInput" class="form-control" value="#{empresaMBean.empresa.nome}" size="50" required="true" requiredMessage="Campo obrigatório.">
+								<f:validateLength minimum="8" maximum="100" /> 
+							</h:inputText>
+							<h:message for = "nomeInput" style = "color:red" />
+						
+						</div>
+				 		<div class="form-group  col-sm-6">
+							<h:outputLabel value="CNPJ:" class="form-label" /> 
+							
+							<h:inputText class="form-control" value="#{empresaMBean.empresa.cnpj}" size="50">
+								<f:validateLength minimum="14" maximum="14" />
+							</h:inputText>
+					
+						</div>
+					</div>
+					<div class="row">
+					 	<div class="form-group col-sm-4">	
+							<h:outputLabel value="Área de Atuacao: *" class="form-label" /> 
+							
+							<h:selectOneMenu 
+								class="form-select"
+								required="true"
+								id="AreaAtuacao"
+		                        value="#{empresaMBean.empresa.areaAtuacao}"
+		                        converter="areAtuacaoConverter"
+		                        requiredMessage="Selecione uma área de atuação.">
+		                        	<f:selectItem itemValue="#{null}" itemLabel="SELECIONE" />
+		                        	<f:selectItems value="#{empresaMBean.areaAtuacaoList}" var="areaAtuacao"
+		                            itemLabel="#{areaAtuacao.descricao}" itemValue="#{areaAtuacao}" />
+	                    	</h:selectOneMenu>
+	                    	<h:message for = "AreaAtuacao" style = "color:red" />
+	                    	
+						</div>
+						<div class="form-group col-sm-4">	
+							<h:outputLabel value="Porte da Empresa: *" class="form-label" /> 
+							
+							<h:selectOneMenu 
+								class="form-select"
+								required="true"
+								id="PorteEmpresa"
+		                        value="#{empresaMBean.empresa.porteEmpresa}"
+		                        requiredMessage="Selecione o porte da empresa."
+		                        converter="porteEmpresaConverter">
+		                        	<f:selectItem itemValue="#{null}" itemLabel="SELECIONE" />
+		                        	<f:selectItems value="#{empresaMBean.porteEmpresaList}" var="porteEmpresa"
+		                            itemLabel="#{porteEmpresa.descricao}" itemValue="#{porteEmpresa}" />
+	                    	</h:selectOneMenu>
+	                    	<h:message for = "PorteEmpresa" style = "color:red" />
+	                    	
+						</div>
+						<div class="form-group col-sm-4">	
+							<h:outputLabel value="Estado: *" class="form-label" />
+							 
+							<h:selectOneMenu 
+							class="form-select"
+							required="true"
+							id="Estado"
+	                        value="#{empresaMBean.empresa.estado}"
+	                        requiredMessage="Selecione o estado da empresa.">
+	                        	<f:selectItem itemValue="" itemLabel="SELECIONE" />
+	                        	<f:selectItem itemValue="AC" itemLabel="AC" />
+								<f:selectItem itemValue="AL" itemLabel="AL" />
+								<f:selectItem itemValue="AP" itemLabel="AP" />
+								<f:selectItem itemValue="AM" itemLabel="AM" />
+								<f:selectItem itemValue="BA" itemLabel="BA" />
+								<f:selectItem itemValue="CE" itemLabel="CE" />
+								<f:selectItem itemValue="DF" itemLabel="DF" />
+								<f:selectItem itemValue="ES" itemLabel="ES" />
+								<f:selectItem itemValue="GO" itemLabel="GO" />
+								<f:selectItem itemValue="MA" itemLabel="MA" />
+								<f:selectItem itemValue="MT" itemLabel="MT" />
+								<f:selectItem itemValue="MS" itemLabel="MS" />
+								<f:selectItem itemValue="MG" itemLabel="MG" />
+								<f:selectItem itemValue="PA" itemLabel="PA" />
+								<f:selectItem itemValue="PB" itemLabel="PB" />
+								<f:selectItem itemValue="PR" itemLabel="PR" /> 
+								<f:selectItem itemValue="PE" itemLabel="PE" />
+								<f:selectItem itemValue="PI" itemLabel="PI" />
+								<f:selectItem itemValue="RJ" itemLabel="RJ" />
+								<f:selectItem itemValue="RN" itemLabel="RN" />
+								<f:selectItem itemValue="RS" itemLabel="RS" />
+								<f:selectItem itemValue="RO" itemLabel="RO" />
+								<f:selectItem itemValue="RR" itemLabel="RR" />
+								<f:selectItem itemValue="SC" itemLabel="SC" />
+								<f:selectItem itemValue="SP" itemLabel="SP" />
+								<f:selectItem itemValue="SE" itemLabel="SE" />
+								<f:selectItem itemValue="TO" itemLabel="TO" />    
+	                    	</h:selectOneMenu>
+	                    	<h:message for = "Estado" style = "color:red" />
+						</div>
+					</div>
+						
+					<div class="row"> 
+						<div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+							<h:commandButton class="btn btn-success btn-lg px-4 gap-3" value="Finalizar cadastro" action="#{empresaMBean.cadastrarEmpresa}" >
+							</h:commandButton>
+						</div>
+					</div>
+				</h:form>
+			</div>
+		</article>
+	</section>
+	
+	<section class="container">
+  		<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    		<p class="col-md-4 mb-0 text-muted">© 2022 ECIS, Inc</p>
+    		<p class="col-md-4 mb-0 text-muted">Developed By <a target="blank" href="https://www.linkedin.com/in/patricia-pamplona-dev/">Patrícia Pamplona</a></p>
+  		</footer>
+	</section>
+</h:body>
+</html>

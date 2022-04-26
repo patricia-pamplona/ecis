@@ -1,0 +1,68 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:f="http://java.sun.com/jsf/core">
+<f:metadata>
+     <f:viewParam name="email" value="#{emailMBean.email}" />
+     <f:viewAction action="#{emailMBean.enviarEmail}"
+         if="#{param['email'] != null}" />
+     <f:viewAction action="#{paginaInicialMBean.entrarPaginaInicial}"
+         if="#{param['email'] == null}" />
+         
+ </f:metadata>
+<h:head> 
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" http-equiv="X-UA-Conpatible" />
+    <h:outputStylesheet library="css" name="bootstrap.min.css" />
+	<title>ECIS - EMAIL CONFIRMAÇÃO</title>
+	
+</h:head>
+
+<h:body>
+	<header class="display-8 fw-normal pricing-header p-3 pb-md-4 mx-auto text-center navbar-dark navbar-dark nav-item" style="background-color: #7952b3; color:white;">ECIS - AVALIAÇÃO</header>
+	<hr class="featurette-divider"> </hr>
+	<section class="container">
+  		
+            <h2 class="display-12 fw-normal pricing-header p-3 pb-md-4 mx-auto text-center">CONFIRMAÇÃO DO EMAIL</h2>
+		
+        <article class="row">
+            <div class="col-xs-12 col-xs-updated">
+		        <h:form class="form-horizontal needs-validation ">
+		        	<div class="row">
+		        	<p>Foi enviado um código de verificação para seu e-mail, caso não receba em alguns minutos, clique em "Reenviar código"</p>
+		        		    <h:inputHidden value="#{emailMBean.codigoGerado}"></h:inputHidden>
+						<div class="form-group justify-content-sm-center ">
+							<h:outputLabel value="Código recebido: *" class="form-label" />
+							
+							<h:inputText id="codigoValidacaot" 
+								class="form-control" 
+								value="#{emailMBean.codigoValidacao}" 
+								size="50" required="true" 
+								requiredMessage="O Campo Código recebido é obrigatório.">
+							</h:inputText>
+							<h:message for = "codigoValidacaot" style = "color:red" />
+						</div>
+					</div>
+					<h:messages style = "color:red"/>
+					<div class="row"> 
+						<div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+							<h:commandButton class="btn btn-outline-secondary btn-lg px-4" value="Reenviar código" action="#{emailMBean.reenviarEmail(param['email'])}" immediate="true">
+								<f:param name="email" value="#{emailMBean.email}" />
+							</h:commandButton>
+							
+							<h:commandButton class="btn btn-success btn-lg px-4 gap-3" value="Validar Email" action="#{emailMBean.entrarDadosEmpresa}" >
+							</h:commandButton>
+							
+						</div>
+					</div>
+				</h:form>
+			</div>
+		</article>
+	</section>
+	
+	<section class="container">
+  		<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    		<p class="col-md-4 mb-0 text-muted">© 2022 ECIS, Inc</p>
+    		<p class="col-md-4 mb-0 text-muted">Developed By <a target="blank" href="https://www.linkedin.com/in/patricia-pamplona-dev/">Patrícia Pamplona</a></p>
+  		</footer>
+	</section>
+</h:body>
+</html>

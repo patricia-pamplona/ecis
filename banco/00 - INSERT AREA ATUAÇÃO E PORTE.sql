@@ -1,0 +1,24 @@
+INSERT INTO area_atuacao (descricao) values ('Cosméticos');
+INSERT INTO area_atuacao (descricao) values ('Laticínios');
+INSERT INTO area_atuacao (descricao) values ('Roupas');
+INSERT INTO area_atuacao (descricao) values ('Móveis');
+INSERT INTO area_atuacao (descricao) values ('Automóveis');
+INSERT INTO area_atuacao (descricao) values ('Equipamentos eletrônicos');
+INSERT INTO area_atuacao (descricao) values ('Roupas');
+INSERT INTO area_atuacao (descricao) values ('Medicamentos (Farmácia)');
+INSERT INTO area_atuacao (descricao) values ('Cosméticos (Perfumaria)');
+INSERT INTO area_atuacao (descricao) values ('Alimentos (Restaurante,	Açougue, Mercado, Padaria)');
+INSERT INTO area_atuacao (descricao) values ('Bebidas (Bar, Adega)');
+INSERT INTO area_atuacao (descricao) values ('Ferragens');
+INSERT INTO area_atuacao (descricao) values ('Educação');
+INSERT INTO area_atuacao (descricao) values ('Consultoria');
+INSERT INTO area_atuacao (descricao) values ('Hospedagem (hotéis e pousadas)');
+INSERT INTO area_atuacao (descricao) values ('Limpeza e manutenção predial');
+INSERT INTO area_atuacao (descricao) values ('Salão de beleza');
+INSERT INTO area_atuacao (descricao) values ('Academia');
+INSERT INTO area_atuacao (descricao) values ('Cinema e teatro');
+
+INSERT INTO porte_empresa (descricao) values ('Microempresa');
+INSERT INTO porte_empresa (descricao) values ('Empresa de pequeno porte');
+INSERT INTO porte_empresa (descricao) values ('Empresa de médio porte');
+INSERT INTO porte_empresa (descricao) values ('Empresa de grande porte');

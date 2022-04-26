@@ -1,0 +1,176 @@
+<html xmlns="http://www.w3.org/1999/xhtml" 
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" http-equiv="X-UA-Conpatible" />
+   	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+   	<h:outputScript name="bootstrap.min.js" library="js"></h:outputScript>
+	<title>ECIS</title>
+</h:head>
+
+<h:body>
+	<div class="container">
+  		<nav id="navBar" class=" navbar navbar-expand-md navbar-dark navbar-dark" style="background-color: #7952b3;">
+			<div class="container-fluid">
+		   		<a class="navbar-brand" href="#">
+		   			<img src="resources/imgs/logo.svg" alt="ECIS" style="width:40px;" class="rounded-pill"/>
+				</a>
+		   		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+		     		<span class="navbar-toggler-icon"></span>
+		   		</button>
+	   			<div class="collapse navbar-collapse" id="collapsibleNavbar">
+		     		<ul class="navbar-nav">
+		       			<li class="nav-item">
+		         			<a class="nav-link" href="#Sobre">Sobre</a>
+		      			 </li>
+		       			<li class="nav-item">
+		         			<a class="nav-link" href="#Metodologia">Metodologia</a>
+		       			</li>
+		       			<li class="nav-item">
+		         			<a class="nav-link" href="#CL-PDCA">CL-PDCA</a>
+		       			</li>
+		       			<li class="nav-item">
+		         			<a class="nav-link" href="#Resultados">Resultados</a>
+		       			</li>
+		       			<li class="nav-item">
+		       				<h:form>
+		         				<h:commandLink class="nav-link"  value="Fazer avaliação" action="#{paginaInicialMBean.entrarAvaliacao}" />
+		        			</h:form>
+		       			</li> 
+	    			</ul>
+	   			</div>
+			</div>
+		</nav>
+	
+		<section id="Sobre" class="row flex-lg-row-reverse align-items-center g-5 py-5">
+		    <div class="col-10 col-sm-8 col-lg-6">
+	      		<img src="resources/imgs/fact_check.svg" class="d-block mx-lg-auto img-fluid" alt="Lista de Checkagem" loading="lazy" width="700" height="500"/>
+		    </div>
+		    <div class="col-lg-6">
+		    	<h1 class="display-5 fw-bold lh-1 mb-3">Sobre o ECIS</h1>
+		      	<p class="lead">O Environmental Compliance Integrated System - ECIS é um aplicativo que ajuda sua empresa a mensurar seu nível de compliance ambiental com foco na redução de custos, prevenção de riscos e mitigação de impactos ambientais alinhados aos Objetivos do Desenvolvimento Sustentável (ODS) da Organicação das Nações Unidas (ONU).</p>
+		      	<div class="d-grid gap-2 d-md-flex justify-content-md-start">
+		      		<h:form>
+		          		<h:commandButton class="btn btn-primary btn-lg px-4 me-md-2"  value="Fazer avaliação" action="#{paginaInicialMBean.entrarAvaliacao}" />
+	          		</h:form>
+	          		<a class="nav-link" href="#navBar">Voltar ao início </a>
+		      	</div>
+	    	</div>
+		</section>
+       	
+       	<section id="Metodologia" class="row flex-lg-row-reverse align-items-center g-5 py-5">
+      		<div class="col-lg-6">
+		    	<h1 class="display-5 fw-bold lh-1 mb-3">Metodologia</h1>
+		      	<p class="lead">O ECIS fornece um ambiente de avaliação baseado na ISO 14.001:2015 de Sistema de Gestão Ambiental (SGA) e na ISO 37.301:2021 de Sistema de Gestão de Compliance (SGC). Foi criado um processo estruturado de gestão a partir do Contexto da Organização, dos seus processos de Liderança e do ciclo PDCA, do inglês, Plan, Do, Check and Act.</p>
+		      	<div class="d-grid gap-2 d-md-flex justify-content-md-start">
+		      		<h:form>
+		          		<h:commandButton class="btn btn-primary btn-lg px-4 me-md-2"  value="Fazer avaliação" action="#{paginaInicialMBean.entrarAvaliacao}" />
+	          		</h:form>
+	          		<a class="nav-link" href="#navBar">Voltar ao início </a>
+		      	</div>
+	    	</div>
+	    	<div class="col-10 col-sm-8 col-lg-6">
+	      		<img src="resources/imgs/hub.svg" class="d-block mx-lg-auto img-fluid" alt="Metodologia" loading="lazy" width="700" height="500"/>
+		    </div>
+       	</section>
+       	
+       	<section id="CL-PDCA" class="container">
+       		<h1 class="display-5 fw-bold lh-1 mb-3 text-center">CL-PDCA</h1>
+       		<div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+		    	<div class="col">
+		        	<div class="card mb-3 rounded-3 shadow-sm">
+		          		<div class="card-header py-3">
+		            		<h4 class="my-0 fw-normal">Contextualização</h4>
+		          		</div>
+		          		<div class="card-body">
+		            		<img src="resources/imgs/context.svg" class="d-block mx-lg-auto img-fluid" alt="Metodologia" loading="lazy" width="700" height="500"/>
+		            		<p>A etapa de Contextualização tem como objetivo entender a organização e seu contexto de atuação. Nela são avaliadas e analisadas as necessidades, espectativas, modo de atuação e escopo da organização.</p>
+		          		</div>
+		        	</div>
+		      	</div>
+		      	<div class="col">
+		        	<div class="card mb-3 rounded-3 shadow-sm">
+		          		<div class="card-header py-3">
+		            		<h4 class="my-0 fw-normal">Liderança</h4>
+		          		</div>
+		          		<div class="card-body">
+		            		<img src="resources/imgs/lideranca.svg" class="d-block mx-lg-auto img-fluid" alt="Metodologia" loading="lazy" width="700" height="500"/>
+		            		<p>A etapa de liderança tem como foco avaliar e analisar a cultura, comprometimento e política organizacional em relação ao compliance, além de avaliar a estrutura organizacional que apoia as ações de compliance.</p>
+		          		</div>
+		        	</div>
+		      	</div>
+		      	<div class="col">
+		        	<div class="card mb-3 rounded-3 shadow-sm">
+		          		<div class="card-header py-3">
+		            		<h4 class="my-0 fw-normal">Planejamento (Plan)</h4>
+		          		</div>
+		          		<div class="card-body">
+		            		<img src="resources/imgs/plan.svg" class="d-block mx-lg-auto img-fluid" alt="Metodologia" loading="lazy" width="700" height="500"/>
+		            		<p>A etapa de Planejamento foca na organização estratégica de compliance da empresa. Nela são levantadas e analisadas as questões internas e externas que impactam o compliance ambiental e os objetivos de compliance almejados pela organização.</p>
+		          		</div>
+		        	</div>
+		      	</div>
+		      	<div class="col">
+		        	<div class="card mb-3 rounded-3 shadow-sm">
+		          		<div class="card-header py-3">
+		            		<h4 class="my-0 fw-normal">Execução (Do)</h4>
+		          		</div>
+		          		<div class="card-body">
+		            		<img src="resources/imgs/done.svg" class="d-block mx-lg-auto img-fluid" alt="Metodologia" loading="lazy" width="700" height="500"/>
+		            		<p>A etapa de Execução faz o acompanhamento e análise da estruturação dos processos da empresa para execução do compliance. Também ocorre a validação dos processos de apoio operacional, visando garantir o devido respeito às normas. </p>
+		          		</div>
+		        	</div>
+		      	</div>
+		      	<div class="col">
+		        	<div class="card mb-3 rounded-3 shadow-sm">
+		          		<div class="card-header py-3">
+		            		<h4 class="my-0 fw-normal">Verificação (Check)</h4>
+		          		</div>
+		          		<div class="card-body">
+		            		<img src="resources/imgs/check.svg" class="d-block mx-lg-auto img-fluid" alt="Metodologia" loading="lazy" width="700" height="500"/>
+		            		<p>A etapa de Verificação checa os processo de monitoramento do compliance da organização. Nela são validadas as ações que são tomadas para garantir que o compliance foi respeitado e para correção de possíveis desvios de conduta.</p>
+		          		</div>
+		        	</div>
+		      	</div>
+		      	<div class="col">
+		        	<div class="card mb-3 rounded-3 shadow-sm">
+		          		<div class="card-header py-3">
+		            		<h4 class="my-0 fw-normal">Melhoria (Act)</h4>
+		          		</div>
+		          		<div class="card-body">
+		            		<img src="resources/imgs/act.svg" class="d-block mx-lg-auto img-fluid" alt="Metodologia" loading="lazy" width="700" height="500"/>
+		            		<p>Como última etapa do ciclo CL-PDCA, a etapa de Melhoria foca em avaliar e analisar as ações da organização em relação a melhoria do processo de compliance.</p>
+		          		</div>
+		        	</div>
+		      	</div>
+		    </div>
+		    <a class="nav-link" href="#navBar">Voltar ao início </a>
+		    
+       	</section>
+       	
+       	<section id="Resultados" class="row flex-lg-row-reverse align-items-center g-5 py-5">
+       		<div class="col-10 col-sm-8 col-lg-6">
+	      		<img src="resources/imgs/chart.svg" class="d-block mx-lg-auto img-fluid" alt="Lista de Checkagem" loading="lazy" width="700" height="500"/>
+		    </div>
+		    <div class="col-lg-6">
+		    	<h1 class="display-5 fw-bold lh-1 mb-3">Resultados</h1>
+		      	<p class="lead">Como resultado da avaliação, o ECIS fornece uma análise sintética da conformidade da sua empresa em relação à ISO 14.001:2015. Além disso, o resultado da avaliação também mensura o nível de conformidade da empresa com a integração das ISO 14.001 e 37.301, apresentando também um feedback com sugestões de melhorias para os itens com menor nível de conformidade.</p>
+		      	<div class="d-grid gap-2 d-md-flex justify-content-md-start">
+		      		<h:form>
+		          		<h:commandButton class="btn btn-primary btn-lg px-4 me-md-2"  value="Fazer avaliação" action="#{paginaInicialMBean.entrarAvaliacao}" />
+	          		</h:form>
+	          		<a class="nav-link" href="#navBar">Voltar ao início </a>
+		      	</div>
+	    	</div>
+       	</section>
+       	
+		<section class="container">
+	  		<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+	    		<p class="col-md-4 mb-0 text-muted">© 2022 ECIS, Inc</p>
+	    		<p class="col-md-4 mb-0 text-muted">Developed By <a target="blank" href="https://www.linkedin.com/in/patricia-pamplona-dev/">Patrícia Pamplona</a></p>
+	  		</footer>
+		</section>
+
+	</div>
+</h:body>
+</html>
