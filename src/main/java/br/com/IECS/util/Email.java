@@ -28,8 +28,8 @@ public class Email {
 	      new javax.mail.Authenticator() {
 	           protected PasswordAuthentication getPasswordAuthentication()
 	           {
-	                 return new PasswordAuthentication("patricia.ifrn@gmail.com",
-	                 "vpwtauqgnckvtokf");
+	                 return new PasswordAuthentication("email@gmail.com",
+	                 "senha");
 	           }
 	      });
 
@@ -40,7 +40,7 @@ public class Email {
 
 	      Message message = new MimeMessage(session);
 	      try {
-			message.setFrom( new InternetAddress("patricia.ifrn@gmail.com", "Patrícia Pamplona - ECIS", "UTF8"));
+			message.setFrom( new InternetAddress("email@gmail.com", "ECIS", "UTF8"));
 		} catch (UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
